@@ -1,0 +1,70 @@
+<!DOCTYPE html>  <!-- HTML5 문서임을 알려줌 -->
+<html>
+<head>
+    <meta charset="utf-8">  <!-- 한글이 정상적으로 보이도록 설정 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">  <!-- 모바일에서 콘텐츠 크기 최적화 -->
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>기말</title>
+</head>
+
+<script>
+    function openNav() {
+        document.getElementById("mySidenav").style.width = "200px";
+    }
+
+    function closeNav() {
+     document.getElementById("mySidenav").style.width = "0";
+    }
+</script>
+</head>
+
+<header>
+<span class="title"  style="font-size:30px; cursor:pointer" onclick="openNav()">&#9776;</span>
+<div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>   <!-- 사이드메뉴 닫기 X -->
+    <a href="index.html#" onclick="closeNav()">Home</a>
+    <a href="About.html#" onclick="closeNav()">About</a>
+    <a href="https://store.steampowered.com/app/433340/Slime_Rancher/">buy</a>
+    <a href="index.html#events">events</a>
+  </div>
+</header>
+
+<body>
+    <div id="header">
+        <div id="logo"><a href="index.html">SLIME RANCHER</a></div>
+    </div>
+    <div id="main-container">
+        <iframe width="960" height="540" src="https://www.youtube.com/embed/ehh3m59vbA0?autoplay=1&mute=1&loop=1" 
+        title="YouTube video player" frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </div>
+
+    <div class="nextslide" style="max-width:1000px; margin: 0 auto; text-align: center;">
+      <img class="mySlides" src="images/img1.png" style="width:100%">
+      <img class="mySlides" src="images/img2.png" style="width:100%">
+      <img class="mySlides" src="images/img3.png" style="width:100%">
+      <img class="mySlides" src="images/img4.png" style="width:100%">
+      <img class="mySlides" src="images/img5.png" style="width:100%">
+      <img class="mySlides" src="images/img6.png" style="width:100%">
+      <img class="mySlides" src="images/img7.png" style="width:100%">
+    </div>
+
+    <script>
+    var myIndex = 0;
+    carousel();
+    
+    function carousel() {
+        var i;
+        var x = document.getElementsByClassName("mySlides");
+        for (i = 0; i < x.length; i++) {
+           x[i].style.display = "none";  
+        }
+        myIndex++;
+        if (myIndex > x.length) {myIndex = 1}    
+        x[myIndex-1].style.display = "block";  
+        setTimeout(carousel, 2500); // Change image every 2.5 seconds
+    }
+    </script>
+    <div id="copyright">Copyright &copy; 2023 DXD</div>
+</body>
+</html>
